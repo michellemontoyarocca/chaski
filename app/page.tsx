@@ -8,7 +8,6 @@ import { TranslatorPanel } from "@/components/translator-panel";
 import { CameraLsp } from "@/components/camera-lsp";
 import { LoadingState } from "@/components/loading-state";
 import { ResultCard } from "@/components/result-card";
-import { Footer } from "@/components/footer";
 import {
   recognizeSign,
   translateText,
@@ -87,7 +86,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }
