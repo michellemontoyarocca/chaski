@@ -13,7 +13,7 @@ export function Footer() {
       <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
         <div className="grid gap-6 sm:grid-cols-2">
           <div>
-            <p className="text-sm font-semibold text-blue-900">ComexTech</p>
+            <p className="text-sm font-semibold text-blue-900">Chaski</p>
             <p className="mt-1 text-xs leading-relaxed text-slate-600">
               MVP académico de apoyo comunicacional para atención de salud rural. Lógica del MVP:
               construir para medir y aprender.
@@ -38,7 +38,7 @@ export function Footer() {
         </div>
 
         <p className="mt-8 border-t border-slate-200 pt-4 text-center text-xs text-slate-500">
-          comextech.es — Salud sin barreras, comunidades más fuertes
+          Salud sin barreras, comunidades más fuertes
         </p>
       </div>
     </footer>

@@ -1,4 +1,7 @@
-# ComexTech — MVP de traducción español–quechua y reconocimiento de LSP
+# Chaski — MVP de traducción español–quechua y reconocimiento de LSP
+
+> *Chaski*: los mensajeros que recorrían los caminos del Tawantinsuyu llevando mensajes por relevos.
+> Esta plataforma cumple el mismo papel entre el personal de salud y el paciente.
 
 Plataforma web de apoyo comunicacional para **atención de salud rural**. Permite traducción
 bidireccional español ↔ quechua (texto y voz) y reconocimiento de Lengua de Señas Peruana (LSP)
@@ -113,7 +116,7 @@ Abrir http://localhost:3000
 
 ## Despliegue
 
-Desplegado en Vercel. Dominio del proyecto: comextech.es
+Desplegado en Vercel.
 
 ---
 

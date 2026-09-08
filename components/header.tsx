@@ -1,4 +1,4 @@
-import { Mountain } from "lucide-react";
+import { Waypoints } from "lucide-react";
 
 export function Header() {
   return (
@@ -6,10 +6,10 @@ export function Header() {
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 sm:px-6">
         <div className="flex items-center gap-3">
           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-800 text-white">
-            <Mountain className="h-5 w-5" />
+            <Waypoints className="h-5 w-5" />
           </span>
           <div className="leading-tight">
-            <p className="text-base font-bold tracking-tight text-blue-900">ComexTech</p>
+            <p className="text-base font-bold tracking-tight text-blue-900">Chaski</p>
             <p className="text-[11px] text-slate-500">Salud sin barreras</p>
           </div>
         </div>

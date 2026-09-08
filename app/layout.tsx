@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ComexTech — Traducción español-quechua y LSP",
+  title: "Chaski — Traducción español-quechua y LSP",
   description:
     "MVP de plataforma web de apoyo comunicacional para atención de salud rural: traducción español-quechua y reconocimiento de Lengua de Señas Peruana.",
 };
