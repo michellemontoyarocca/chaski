@@ -7,7 +7,6 @@ Plataforma web de apoyo comunicacional para **atención de salud rural**. Permit
 bidireccional español ↔ quechua (texto y voz) y reconocimiento de Lengua de Señas Peruana (LSP)
 mediante cámara, desde el navegador y sin instalación.
 
-Proyecto del curso **Proyecto Final de Carrera III**.
 
 ## Problema
 
