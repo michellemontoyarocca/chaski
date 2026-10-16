@@ -64,7 +64,7 @@ export function TranslatorPanel({
     }
 
     const recognition = new Ctor();
-    recognition.lang = direction === "es-qu" ? "es-PE" : "es-PE";
+    recognition.lang = "es-PE";
     recognition.continuous = false;
     recognition.interimResults = false;
     recognition.onresult = (event) => {
@@ -117,10 +117,12 @@ export function TranslatorPanel({
 
       {mode === "voz" && (
         <div className="space-y-2">
+          {direction === "qu-es" && <p className="rounded-lg bg-amber-50 p-3 text-xs text-amber-900">El dictado del navegador está configurado para español. Para ingresar quechua, escribe la frase.</p>}
           <Button
             type="button"
             variant={listening ? "destructive" : "outline"}
             onClick={toggleListening}
+            disabled={direction === "qu-es"}
           >
             {listening ? <Square className="h-4 w-4" /> : <Mic className="h-4 w-4" />}
             {listening ? "Detener dictado" : "Dictar por micrófono"}

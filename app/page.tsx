@@ -48,11 +48,16 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
 
-        <section className="mx-auto max-w-5xl px-4 py-10 sm:px-6">
+        <section id="traductor" className="mx-auto max-w-5xl scroll-mt-24 px-5 py-14 sm:px-8 sm:py-20">
+          <div className="mb-8 max-w-2xl">
+            <p className="text-xs font-bold uppercase tracking-[.22em] text-[#a65b31]">Herramienta interactiva</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[#092d31] sm:text-5xl">Un puente, paso a paso.</h2>
+            <p className="mt-4 leading-7 text-slate-600">Elige cómo comunicarte. La traducción utiliza un léxico limitado; la cámara muestra una simulación de inferencia LSP para probar el flujo, no un diagnóstico ni un intérprete validado.</p>
+          </div>
           <div className="space-y-8">
             <ModeSelector value={mode} onChange={changeMode} />
 
-            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+            <div className="rounded-3xl border border-[#e3d9c9] bg-white p-5 shadow-sm sm:p-7">
               <p className="mb-4 text-sm font-semibold text-slate-900">
                 2. {mode === "sena" ? "Realizar la seña" : "Ingresar el contenido"}
               </p>

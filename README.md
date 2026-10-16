@@ -1,11 +1,14 @@
-# Chaski — MVP de traducción español–quechua y reconocimiento de LSP
+# Chaski — traductor experimental español–quechua y demo LSP
 
 > *Chaski*: los mensajeros que recorrían los caminos del Tawantinsuyu llevando mensajes por relevos.
 > Esta plataforma cumple el mismo papel entre el personal de salud y el paciente.
 
 Plataforma web de apoyo comunicacional para **atención de salud rural**. Permite traducción
-bidireccional español ↔ quechua (texto y voz) y reconocimiento de Lengua de Señas Peruana (LSP)
-mediante cámara, desde el navegador y sin instalación.
+bidireccional español ↔ quechua sobre un léxico acotado y una demo de flujo para Lengua de Señas
+Peruana (LSP), desde el navegador y sin instalación.
+
+**Estado:** prototipo. No sustituye a un intérprete profesional ni debe usarse para tomar
+decisiones clínicas. La demo LSP no analiza la cámara ni estima confianza real.
 
 
 ## Problema
@@ -29,11 +32,11 @@ Seleccionar modalidad → Ingresar texto / voz o realizar seña → Procesar →
 
 ## Funcionalidades
 
-- Traducción de texto y voz español ↔ quechua sobre una base de **1,635 pares léxicos** reales
+- Traducción de texto español ↔ quechua sobre una base de **1,635 pares léxicos**
   (variante Cusco pentavocálico).
-- Reconocimiento de **86 señas LSP** mediante cámara.
-- Procesamiento basado en **landmarks corporales**: no se almacenan imágenes ni videos.
-- Dictado por voz con Web Speech API del navegador.
+- Catálogo de **86 señas LSP** con resultados simulados para explorar la interfaz.
+- Vista previa de cámara local; no se analiza, graba ni envía la imagen.
+- Dictado en español mediante Web Speech API del navegador, sujeto a compatibilidad del navegador.
 - Indicador de **cobertura léxica** y listado de palabras sin equivalencia, como insumo para ampliar
   el vocabulario clínico.
 - Confirmación de comprensión del paciente y opción de **repetir o reformular**.
@@ -41,9 +44,9 @@ Seleccionar modalidad → Ingresar texto / voz o realizar seña → Procesar →
 
 ## Estado del reconocimiento de señas
 
-El módulo de LSP de esta versión **simula** la inferencia del modelo para validar el flujo de uso.
-La exactitud de referencia de **86.03 %** proviene del sistema entrenado aparte y se toma como punto
-de partida a validar, no como resultado final.
+El módulo LSP de esta versión **simula** la inferencia: selecciona una seña del catálogo o al azar,
+sin analizar los fotogramas. Cualquier métrica de un modelo entrenado aparte requiere validación
+independiente y no describe el desempeño de esta aplicación.
 
 ## Resultado esperado del MVP
 
@@ -54,7 +57,7 @@ existen en vocabulario clínico y reconocimiento de señas.
 ## Métricas de validación
 
 1. Precisión de traducción / reconocimiento por sesión
-2. Meta de referencia: 86.03 % como punto de partida a validar
+2. Exactitud de reconocimiento, solo cuando se integre y evalúe un modelo real
 3. Tiempo promedio para obtener un resultado
 4. % de pacientes que confirman comprensión correcta
 5. % de personal que considera útil la herramienta
@@ -90,18 +93,18 @@ components/
   hero.tsx
   mode-selector.tsx           texto / voz / seña LSP
   translator-panel.tsx        entrada de texto y dictado por voz
-  camera-lsp.tsx              captura por cámara y catálogo de señas
+  camera-lsp.tsx              vista previa de cámara y catálogo demo de señas
   result-card.tsx             resultado, métricas y confirmación
   loading-state.tsx
   footer.tsx
 lib/
-  translate-service.ts        lógica de traducción y reconocimiento (separada de la interfaz)
+  translate-service.ts        lógica de traducción y simulación LSP (separada de la interfaz)
 data/
   lexicon.json                1,635 pares léxicos español–quechua
   signs.ts                    catálogo de 86 señas LSP
 ```
 
-La lógica de traducción y reconocimiento vive en `lib/translate-service.ts`, separada de los
+La lógica de traducción y simulación vive en `lib/translate-service.ts`, separada de los
 componentes de interfaz.
 
 ## Ejecutar en local
@@ -113,9 +116,11 @@ npm run dev
 
 Abrir http://localhost:3000
 
+Para verificar cambios: `npm run lint` y `npm run build`.
+
 ## Despliegue
 
-Desplegado en Vercel.
+La configuración Next.js permite desplegarlo en Vercel u otra plataforma compatible.
 
 ---
 

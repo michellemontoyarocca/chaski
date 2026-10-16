@@ -8,7 +8,6 @@ const PAIRS = lexiconData as [string, string][];
 
 export const LEXICON_SIZE = PAIRS.length;
 export const SIGN_COUNT = SIGNS.length;
-export const REFERENCE_ACCURACY = 86.03;
 
 const esToQu = new Map<string, string>();
 const quToEs = new Map<string, string>();
@@ -39,9 +38,7 @@ export interface TranslationResult {
 export interface SignResult {
   kind: "sena";
   sign: Sign;
-  confidence: number;
   elapsedMs: number;
-  landmarks: number;
 }
 
 function normalize(text: string): string {
@@ -128,9 +125,7 @@ export async function recognizeSign(hint?: string): Promise<SignResult> {
   return {
     kind: "sena",
     sign,
-    confidence: Math.round((REFERENCE_ACCURACY + (Math.random() * 8 - 4)) * 100) / 100,
     elapsedMs: Math.round(performance.now() - started),
-    landmarks: 543,
   };
 }
 

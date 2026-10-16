@@ -20,13 +20,14 @@ export function ResultCard({ result, onReset }: ResultCardProps) {
     <Card className="border-slate-200 shadow-sm">
       <CardHeader>
         <CardTitle className="text-base text-slate-900">
-          {isSign ? "Seña reconocida" : "Resultado de la traducción"}
+          {isSign ? "Ejemplo del catálogo LSP" : "Resultado de la traducción"}
         </CardTitle>
       </CardHeader>
 
       <CardContent className="space-y-5">
         {isSign ? (
           <div className="space-y-3">
+            <p className="rounded-xl bg-amber-50 p-3 text-xs leading-relaxed text-amber-900">Resultado simulado para explorar el flujo. La imagen de la cámara no se analiza.</p>
             <div className="rounded-xl bg-slate-50 p-4">
               <p className="text-xs uppercase tracking-wide text-slate-500">Español</p>
               <p className="mt-1 text-2xl font-semibold text-slate-900">{result.sign.es}</p>
@@ -59,11 +60,7 @@ export function ResultCard({ result, onReset }: ResultCardProps) {
             <Clock className="h-3.5 w-3.5" />
             {result.elapsedMs} ms
           </span>
-          <span className="flex items-center gap-1.5">
-            <Gauge className="h-3.5 w-3.5" />
-            {isSign ? `Confianza ${result.confidence}%` : `Cobertura léxica ${result.coverage}%`}
-          </span>
-          {isSign && <span>{result.landmarks} landmarks procesados</span>}
+          {!isSign && <span className="flex items-center gap-1.5"><Gauge className="h-3.5 w-3.5" />Cobertura léxica {result.coverage}%</span>}
         </div>
 
         {!isSign && result.unmatched.length > 0 && (

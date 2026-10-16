@@ -18,7 +18,7 @@ interface ModeSelectorProps {
 export function ModeSelector({ value, onChange }: ModeSelectorProps) {
   return (
     <div>
-      <p className="text-sm font-semibold text-slate-900">1. Seleccionar modalidad</p>
+      <p className="text-sm font-semibold text-[#092d31]">1. Seleccionar modalidad</p>
       <div className="mt-3 grid gap-3 sm:grid-cols-3">
         {MODES.map((mode) => {
           const active = value === mode.id;
@@ -29,16 +29,16 @@ export function ModeSelector({ value, onChange }: ModeSelectorProps) {
               onClick={() => onChange(mode.id)}
               aria-pressed={active}
               className={cn(
-                "flex items-center gap-3 rounded-xl border p-4 text-left transition",
+                "flex items-center gap-3 rounded-2xl border p-4 text-left transition",
                 active
-                  ? "border-blue-700 bg-blue-50 ring-2 ring-blue-200"
-                  : "border-slate-200 bg-white hover:border-blue-300 hover:bg-slate-50",
+                  ? "border-[#16776e] bg-[#e8f4ee] ring-2 ring-[#b7d8cc]"
+                  : "border-[#e3d9c9] bg-white hover:border-[#16776e] hover:bg-[#f8faf5]",
               )}
             >
               <span
                 className={cn(
                   "flex h-10 w-10 shrink-0 items-center justify-center rounded-lg",
-                  active ? "bg-blue-800 text-white" : "bg-slate-100 text-slate-600",
+                  active ? "bg-[#0e655f] text-white" : "bg-[#f5efe4] text-[#365954]",
                 )}
               >
                 <mode.icon className="h-5 w-5" />

@@ -62,15 +62,15 @@ export function CameraLsp({ onCapture, processing }: CameraLspProps) {
         )}
         {active && (
           <span className="absolute left-3 top-3 rounded-full bg-black/60 px-2 py-1 text-[11px] font-medium text-white">
-            Procesando landmarks corporales
+            Vista previa local · sin análisis de imagen
           </span>
         )}
       </div>
 
       <p className="flex items-start gap-2 rounded-lg bg-emerald-50 p-3 text-xs leading-relaxed text-emerald-900">
         <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0" />
-        El sistema procesa únicamente landmarks corporales. No se almacenan imágenes ni videos del
-        paciente.
+        La cámara ofrece solo una vista previa local. La demo no analiza imágenes ni almacena videos.
+        El resultado se elige del catálogo de ejemplo.
       </p>
 
       {error && (
@@ -95,10 +95,10 @@ export function CameraLsp({ onCapture, processing }: CameraLspProps) {
           type="button"
           onClick={() => onCapture()}
           disabled={processing}
-          className="bg-blue-800 hover:bg-blue-900"
+          className="bg-[#0e655f] hover:bg-[#094d48]"
         >
           <Hand className="h-4 w-4" />
-          Capturar seña
+          Mostrar ejemplo aleatorio
         </Button>
         <Button type="button" variant="ghost" onClick={() => setShowCatalog((prev) => !prev)}>
           {showCatalog ? "Ocultar catálogo" : `Ver catálogo (${SIGNS.length})`}
